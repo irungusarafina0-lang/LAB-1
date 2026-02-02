@@ -1,0 +1,36 @@
+# Lab 1: Ohm's Law Calculator
+
+print("OHM'S LAW CALCULATOR")
+print("I = V / R")
+print("P = V * I")
+print("-" * 30)
+
+while True:
+    try:
+        # Input values
+        voltage = float(input("Enter voltage (V): "))
+        resistance = float(input("Enter resistance (Ohms): "))
+
+        # Check for zero resistance
+        if resistance == 0:
+            print("Error: Resistance cannot be zero.")
+            continue
+
+        # Calculate current
+        current = voltage / resistance
+
+        # Calculate power
+        power = voltage * current
+
+        # Display results
+        print(f"Current (I) = {current:.2f} A")
+        print(f"Power (P) = {power:.2f} W")
+
+    except ValueError:
+        print("Invalid input! Please enter numeric values.")
+
+    # Ask user if they want to continue
+    choice = input("Do you want to perform another calculation? (yes/no): ").lower()
+    if choice != "yes":
+        print("Program terminated.")
+        break
